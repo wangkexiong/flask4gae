@@ -1,0 +1,1 @@
+python %GAE_PYTHON%\dev_appserver.py --skip_sdk_update_check true .

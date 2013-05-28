@@ -1,0 +1,14 @@
+# Standard ignores
+*.pyc
+*.pyo
+*.DS_Store
+*.swp
+*.idea
+*.project
+*.pydevproject
+*.kpf
+*.log
+*.log.*
+
+# Don't store secret keys in version control
+secret_keys.py

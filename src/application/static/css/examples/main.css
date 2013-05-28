@@ -1,0 +1,22 @@
+.rightbuttom {
+    background-color: #09C;
+    height: 30px;
+    line-height: 30px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    _POSITION: absolute;/*IE6*/
+    _TOP: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight);/*IE6*/
+}
+
+.rendertime {
+    height: 30px;
+    line-height: 30px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    color: #999999;
+    z-index: 1050;
+    padding: 5px 60px;
+    _POSITION: absolute;/*IE6*/
+}

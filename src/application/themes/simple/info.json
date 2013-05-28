@@ -1,0 +1,9 @@
+{
+    "application": "application", 
+    "identifier": "AEX", 
+    "name": "AEX", 
+    "author": "Simon",
+    "description": "theme for EasyBlog",
+    "license": "MIT/X11",
+    "doctype": "html5"
+}
