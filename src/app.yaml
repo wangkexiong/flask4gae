@@ -1,4 +1,4 @@
-application: myflaskonappengineapp
+application: flask4gae
 version: 1
 runtime: python27
 api_version: 1
@@ -36,9 +36,9 @@ handlers:
 - url: /gae_mini_profiler/.*
   script: packages.gae_mini_profiler.main.application
 
-- url: /_themes/(.*)/(.*)
+- url: /_themes/([^\/]*)/(.*)
   static_files: application/themes/\1/static/\2
-  upload: application/themes/(.*)/static/(.*\.(gif|png|jpg|css|js))
+  upload: application/themes/(.*)/static/(.*)
 
 - url: /static/cdn/.*
   script: runner.app

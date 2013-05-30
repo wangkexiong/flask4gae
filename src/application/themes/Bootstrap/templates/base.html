@@ -7,15 +7,15 @@
 
 {% block style %}
   {{super()}}
-  <link rel="stylesheet" href="/static/css/examples/main.css">
+  <link rel="stylesheet" href="{{theme_static('css/style.css')}}">
 {% endblock %}
 
 {%- block body_content %}
   <div id="header">
-  {% include 'examples/includes/nav.html' %}
+  {% include theme('includes/nav.html') %}
   </div>
   <div class="container" id="maincontent">
-  {% include 'examples/includes/flash_message.html' %}
+  {% include theme('includes/flash_message.html') %}
     <div id="body_content">
       {% block content %}{# main content area #}{% endblock %}
     </div>

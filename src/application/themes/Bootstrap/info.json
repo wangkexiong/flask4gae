@@ -1,9 +1,9 @@
 {
     "application": "application", 
-    "identifier": "AEX", 
-    "name": "AEX", 
+    "identifier": "Bootstrap", 
+    "name": "Bootstrap", 
     "author": "Simon",
-    "description": "theme for EasyBlog",
+    "description": "Rending with Twitter Bootstrap",
     "license": "MIT/X11",
     "doctype": "html5"
 }

@@ -3,7 +3,7 @@
 from google.appengine.api import users
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 
-from flask import Blueprint, flash, redirect, request, url_for, render_template
+from flask import Blueprint, flash, redirect, request, url_for
 
 from application.models import ExampleModel
 from application.forms import ExampleForm
@@ -53,7 +53,7 @@ def list_examples():
 def cached_examples():
     """This view should be cached for 60 sec"""
     examples = ExampleModel.query()
-    return render_template('examples/list_cached.html', examples=examples)
+    return render('examples/list_cached.html', examples=examples)
 
 
 @ExampleBP.route('/examples/<int:example_id>/edit', methods=['GET', 'POST'])
@@ -69,7 +69,7 @@ def edit_example(example_id):
         flash(u'Example %s successfully saved.' % example_id, 'success')
         return redirect(url_for('ExampleBP.list_examples'))
 
-    return render_template('examples/edit.html', example=example, form=form)
+    return render('examples/edit.html', example=example, form=form)
 
 
 @ExampleBP.route('/examples/<int:example_id>/delete', methods=['POST'])

@@ -5,30 +5,30 @@
   </div>
   <div class="modal-body">
     <form id="new-example-form" class="well form-horizontal"
-          action="{{ url_for('ExampleBP.list_examples') }}" method="post" accept-charset="utf-8">
+          action="{{url_for('ExampleBP.list_examples')}}" method="post" accept-charset="utf-8">
       <fieldset>
-        {{ form.hidden_tag() }}
+        {{form.hidden_tag()}}
         <div class="control-group">
-          <div class="control-label">{{ form.example_name.label }}</div>
+          <div class="control-label">{{form.example_name.label}}</div>
           <div class="controls">
-            {{ form.example_name|safe }}
+            {{form.example_name|safe}}
             {% if form.example_name.errors %}
             <ul class="errors">
               {% for error in form.example_name.errors %}
-              <li>{{ error }}</li>
+              <li>{{error}}</li>
               {% endfor %}
             </ul>
             {% endif %}
           </div>
         </div>
         <div class="control-group">
-          <div class="control-label">{{ form.example_description.label }}</div>
+          <div class="control-label">{{form.example_description.label}}</div>
           <div class="controls">
-            {{ form.example_description|safe }}
+            {{form.example_description|safe}}
             {% if form.example_description.errors %}
             <ul class="errors">
               {% for error in form.example_description.errors %}
-              <li>{{ error }}</li>
+              <li>{{error}}</li>
               {% endfor %}
             </ul>
             {% endif %}
@@ -44,4 +44,3 @@
     </form>
   </div>
 </div>
-

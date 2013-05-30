@@ -1,4 +1,4 @@
-{% extends "examples/base.html" %}
+{% extends theme('base.html') %}
 
 {% block content %}
 
@@ -18,11 +18,11 @@
     {% for example in examples %}
     {% set example_id = example.key.id() %}
     <tr>
-      <td>{{ example_id }}</td>
-      <td>{{ example.example_name }}</td>
-      <td>{{ example.example_description }}</td>
-      <td>{{ example.added_by }}</td>
-      <td class="nowrap">{{ example.timestamp.strftime('%b %d, %Y %I:%M %p') }}</td>
+      <td>{{example_id}}</td>
+      <td>{{example.example_name}}</td>
+      <td>{{example.example_description}}</td>
+      <td>{{example.added_by}}</td>
+      <td class="nowrap">{{example.timestamp.strftime('%b %d, %Y %I:%M %p')}}</td>
     </tr>
     {% else %}
     <tr><td colspan="5">No examples yet</td></tr>

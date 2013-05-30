@@ -45,4 +45,4 @@ def warmup():
 
 @RootBP.route('/')
 def index():
-    return 'Hello world'
+    return '<html><body>Hello world</body></html>'
