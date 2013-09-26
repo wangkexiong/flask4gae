@@ -28,6 +28,8 @@ CSRF_SESSION_KEY = SESSION_KEY
 ## Cache Type
 CACHE_TYPE = 'gaememcached'
 
+## Theme
+THEME = ''
 
 ## CDNJS default configuration
 #JS_USE_MINIFIED = True

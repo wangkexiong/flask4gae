@@ -3,7 +3,7 @@
 from google.appengine.api import users
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 
-from flask import Blueprint, flash, redirect, request, url_for
+from flask import current_app, Blueprint, flash, redirect, request, url_for
 
 from application.models import ExampleModel
 from application.forms import ExampleForm
@@ -12,6 +12,17 @@ from application.helper.wrapper import render
 from decorators import login_required, admin_required
 
 ExampleBP = Blueprint('ExampleBP', __name__)
+
+
+@ExampleBP.route('/change')
+def change():
+    #debug purpose
+    if current_app.config['THEME']:
+        current_app.config['THEME'] = ''
+    else:
+        current_app.config['THEME'] = 'Bootstrap'
+
+    return redirect(url_for('ExampleBP.list_examples'))
 
 
 @ExampleBP.route('/hello/<username>')
@@ -72,7 +83,7 @@ def edit_example(example_id):
     return render('examples/edit.html', example=example, form=form)
 
 
-@ExampleBP.route('/examples/<int:example_id>/delete', methods=['POST'])
+@ExampleBP.route('/examples/<int:example_id>/delete', methods=['GET', 'POST'])
 @login_required
 def delete_example(example_id):
     """Delete an example object"""
