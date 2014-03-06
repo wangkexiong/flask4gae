@@ -1,9 +1,0 @@
-{
-    "application": "application", 
-    "identifier": "Bootstrap", 
-    "name": "Bootstrap", 
-    "author": "Simon",
-    "description": "Rending with Twitter Bootstrap",
-    "license": "MIT/X11",
-    "doctype": "html5"
-}

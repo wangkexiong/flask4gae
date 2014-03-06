@@ -1,6 +1,0 @@
-{% extends "bootstrap_base.html" %}
-
-{% block style -%}
-    {{super()}}
-    <link href="{{('twitter-bootstrap/'~bootstrap_ver~'/css/bootstrap-responsive.css')|cdn_find_resource}}" rel="stylesheet">
-{%- endblock style %}
