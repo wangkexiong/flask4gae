@@ -4,7 +4,7 @@ formatters:
   brief:
     format: "%(levelname)-8s: %(message)s"
   precise:
-    format: "%(asctime)s %(filename)s:%(lineno)d\n  %(levelname)-8s - %(message)s"
+    format: "%(asctime)s %(filename)s:%(lineno)d  [%(levelname)-8s] - %(message)s"
 
 handlers:
   console:
@@ -16,8 +16,8 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: DEBUG
     formatter: precise
-    filename: debug.log
-    maxBytes: 1024
+    filename: testing.log
+    maxBytes: 102400
     backupCount: 2
 
 loggers:
