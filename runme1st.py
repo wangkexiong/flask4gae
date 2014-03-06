@@ -20,9 +20,10 @@ from optparse import OptionParser
 from random import choice
 from string import Template
 
+SOURCECODE_PATH = 'source'
 
 # File settings
-file_name = os.sep.join(['src', 'application', 'secret_keys.py'])
+file_name = os.sep.join([SOURCECODE_PATH, 'application', 'secret_keys.py'])
 file_template = Template('''# CSRF and Session keys
 
 CSRF_SECRET_KEY = '$csrf_key'
