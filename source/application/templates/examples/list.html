@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% set jquery_ver = '2.0.0' %}
+
+{% block title %}Example App{% endblock title %}
+
+{%- block body_content %}
+  {% if examples %}
+    <ul>  
+    {% for example in examples %}
+    {% set example_id = example.key.id() %}
+    <li><div>
+    <span class="examplecreated">{{example.timestamp.strftime('%Y-%m-%d %H:%M')}}</span>
+    <span class="examplename">{{example.example_name}}</span><span class="exampleowner">{{example.added_by}}</span>
+    <span class="exampleop" align=right>
+    <a href="{{url_for('ExampleBP.edit_example', example_id=example_id)}}">Edit</a>
+    <a href="{{url_for('ExampleBP.delete_example', example_id=example_id)}}">Delete</a>
+    </span>
+    </div></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <b>No example yet</b>
+  {% endif %}
+{%- endblock body_content %}
+
+{% block js_bottom %}
+  <script src="{{('jquery/'~jquery_ver~'/jquery.js')|cdn_find_resource}}"></script>
+{% endblock js_bottom %}

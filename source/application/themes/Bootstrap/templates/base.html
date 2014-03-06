@@ -1,0 +1,31 @@
+{% extends 'bootstrap_responsive.html' %}
+{% set modernizr_ver = '2.6.2' %}
+
+{% block html_attribs -%}
+  {{super()}} class="no-js"
+{%- endblock html_attribs %}
+
+{% block style %}
+  {{super()}}
+  <link rel="stylesheet" href="{{theme_static('css/style.css')}}">
+{% endblock %}
+
+{%- block body_content %}
+  <div id="header">
+  {% include theme('includes/nav.html') %}
+  </div>
+  <div class="container" id="maincontent">
+  {% include theme('includes/flash_message.html') %}
+    <div id="body_content">
+      {% block content %}{# main content area #}{% endblock %}
+    </div>
+  </div>
+  {% block tail_script %}{# defer-capable JS block #}{% endblock %}
+  <div class="rendertime"><|pagerendertime|></div>
+{% endblock %}
+
+{% block bootstrap_js_bottom -%}
+  {{super()}}
+  <script src="{{('modernizr/'~modernizr_ver~'/modernizr.js')|cdn_find_resource}}"></script>
+{%- endblock %}
+
